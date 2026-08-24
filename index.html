@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ravintola Santa Marina - Menu</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-red: #d32f2f;
+            --accent-gold: #c6a664;
+            --dark-bg: #1a1a1a;
+            --card-bg: #ffffff;
+            --text-main: #333;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: var(--text-main);
+            padding-bottom: 90px;
+        }
+
+        /* Header & Logo */
+        header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1574129624517-3620f4c0175b?auto=format&fit=crop&w=800&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            border-bottom: 3px solid var(--accent-gold);
+        }
+
+        .logo-area {
+            background: white;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid var(--accent-gold);
+        }
+
+        .logo-area i {
+            color: var(--primary-red);
+            font-size: 40px;
+        }
+
+        .brand-name {
+            font-size: 26px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        }
+
+        .sub-text {
+            font-size: 14px;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        /* Navigation */
+        .menu-nav {
+            display: flex;
+            background: white;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            overflow-x: auto;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            scrollbar-width: none;
+        }
+
+        .nav-item {
+            padding: 18px 25px;
+            white-space: nowrap;
+            text-decoration: none;
+            color: #666;
+            font-weight: 700;
+            font-size: 14px;
+            border-bottom: 3px solid transparent;
+        }
+
+        .nav-item.active {
+            color: var(--primary-red);
+            border-bottom: 3px solid var(--primary-red);
+        }
+
+        /* Content */
+        .container { padding: 15px; }
+
+        .section-title {
+            margin: 25px 0 15px;
+            font-size: 22px;
+            color: #1a1a1a;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 800;
+        }
+
+        .menu-item {
+            background: var(--card-bg);
+            border-radius: 12px;
+            display: flex;
+            margin-bottom: 12px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+            border: 1px solid #eee;
+        }
+
+        .item-img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+        }
+
+        .item-details {
+            padding: 12px;
+            flex: 1;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 4px;
+        }
+
+        .item-name { font-weight: 700; font-size: 16px; color: #1a1a1a; }
+        .item-price { color: var(--primary-red); font-weight: 800; }
+        .item-desc { font-size: 13px; color: #777; line-height: 1.4; }
+
+        /* Sticky Call Button */
+        .footer-action {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: rgba(255,255,255,0.95);
+            padding: 12px 20px;
+            box-shadow: 0 -4px 15px rgba(0,0,0,0.1);
+            backdrop-filter: blur(5px);
+            z-index: 1000;
+        }
+
+        .btn-call {
+            background: var(--primary-red);
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 16px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 16px;
+            box-shadow: 0 4px 12px rgba(211, 47, 47, 0.3);
+        }
+
+        .info-footer {
+            text-align: center;
+            padding: 30px 15px;
+            background: #eee;
+            font-size: 13px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo-area">
+        <i class="fa fa-pizza-slice"></i>
+    </div>
+    <h1 class="brand-name">Santa Marina</h1>
+    <p class="sub-text">Pizzeria & Kebab Heinola</p>
+</header>
+
+<div class="menu-nav">
+    <a href="#pizzat" class="nav-item active">Pizzat</a>
+    <a href="#erikoispizzat" class="nav-item">Erikoispizzat</a>
+    <a href="#kebab" class="nav-item">Kebabit</a>
+    <a href="#juomat" class="nav-item">Juomat</a>
+</div>
+
+<div class="container">
+    
+    <h2 id="pizzat" class="section-title">Klassikkopizzat</h2>
+
+    <div class="menu-item">
+        <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=200" class="item-img">
+        <div class="item-details">
+            <div class="item-header">
+                <span class="item-name">Bolognese</span>
+                <span class="item-price">11,50€</span>
+            </div>
+            <p class="item-desc">Jauheliha, tomaattikastike, juusto.</p>
+        </div>
+    </div>
+
+    <div class="menu-item">
+        <img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?auto=format&fit=crop&w=200" class="item-img">
+        <div class="item-details">
+            <div class="item-header">
+                <span class="item-name">Americana</span>
+                <span class="item-price">12,50€</span>
+            </div>
+            <p class="item-desc">Kinkku, ananas, aurajuusto.</p>
+        </div>
+    </div>
+
+    <h2 id="erikoispizzat" class="section-title">Erikoispizzat</h2>
+
+    <div class="menu-item">
+        <img src="https://images.unsplash.com/photo-1593504049359-7b7d92c7185d?auto=format&fit=crop&w=200" class="item-img">
+        <div class="item-details">
+            <div class="item-header">
+                <span class="item-name">Heinolan Special</span>
+                <span class="item-price">13,90€</span>
+            </div>
+            <p class="item-desc">Kebabliha, salami, pekoni, sipuli, kebab-kastike.</p>
+        </div>
+    </div>
+
+    <h2 id="kebab" class="section-title">Kebabit</h2>
+
+    <div class="menu-item">
+        <img src="https://images.unsplash.com/photo-1561651823-34feb02250e4?auto=format&fit=crop&w=200" class="item-img">
+        <div class="item-details">
+            <div class="item-header">
+                <span class="item-name">Iskender Kebab</span>
+                <span class="item-price">12,90€</span>
+            </div>
+            <p class="item-desc">Kebabliha, paloiteltu leipä, jogurtti, salaatti.</p>
+        </div>
+    </div>
+
+</div>
+
+<div class="info-footer">
+    <p><strong>Ravintola Santa Marina</strong></p>
+    <p>Koulutie 2, 18300 Heinola</p>
+    <p>Ma-To 11-21 | Pe-La 11-22 | Su 12-21</p>
+</div>
+
+<div class="footer-action">
+    <a href="tel:+358413195553" class="btn-call">
+        <i class="fa fa-phone-alt"></i> TILAA SOITTAMALLA
+    </a>
+</div>
+
+<script>
+    // Aktiivisen välilehden vaihto klikatessa
+    const navItems = document.querySelectorAll('.nav-item');
+    navItems.forEach(item => {
+        item.addEventListener('click', function() {
+            navItems.forEach(i => i.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+</script>
+
+</body>
+</html>
