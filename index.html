@@ -175,6 +175,34 @@
             font-size: 13px;
             color: #888;
         }
+
+        header {
+            /* 1. Set the background image */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                            url('assets/images/logo.jpg');
+            
+            /* 2. Style the background to fit properly */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            
+            /* 3. Ensure header has enough height to show the image */
+            padding: 60px 20px;
+            min-height: 200px;
+            
+            /* 4. Ensure text is readable */
+            color: #ffffff; 
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Optional: Add a shadow to the text to make it pop against the image */
+        header h1, header p {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            margin: 0;
+        }
     </style>
 </head>
 <body>
