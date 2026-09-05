@@ -259,19 +259,54 @@
                 font-size: 20px;
             }
         }
+
+        .franchise-logo-link {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 10000; /* Keeps it above all other elements */
+            transition: transform 0.3s ease;
+            display: block;
+        }
+
+        .rolls-logo-img {
+            width: 100px;  /* Desktop size */
+            height: auto; /* Maintains aspect ratio to prevent stretching */
+            filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2)); /* Adds depth against the background */
+        }
+
+        .franchise-logo-link:hover {
+            transform: scale(1.05); /* Subtle grow effect on hover */
+        }
+
+        /* Mobile adjustments (Phones) */
+        @media (max-width: 480px) {
+            .franchise-logo-link {
+                top: 10px;
+                left: 10px;
+            }
+            
+            .rolls-logo-img {
+                width: 70px; /* Slightly smaller for mobile to save space */
+            }
+        }
     </style>
 </head>
 <body>
 
+<!-- Franchise Logo (Top Left) -->
+<a href="https://www.rolls.fi/" class="franchise-logo-link" target="_blank">
+    <img src="assets/images/Rolls-logo.png" alt="Rolls Logo" width="100" height="100" class="rolls-logo-img">
+</a>
+
 <header>
     <div class="logo-area">
         <a href="index.html">
-            <img src="assets/images/Rolls-logo.png" alt="Rolls Logo" width="100px" height="100px">
         </a>
     </div>
-    </div>
     <h1 class="brand-name">Santa Marina</h1>
-    <p class="sub-text">Pizzeria & Kebab Heinola</p>
+    <p class="sub-text">Pizzeria & Kebab</p>
+    <p class="sub-text">Heinolan kirkonkylä</p>
 </header>
 
 <div class="menu-nav">
