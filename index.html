@@ -262,44 +262,33 @@
         }
 
         .franchise-logo-link {
-            position: fixed;
-            top: 25px; /* Slightly more spacing from the top */
+            /* Changed from fixed to absolute to make it scroll with the page */
+            position: absolute; 
+            top: 25px;
             left: 25px;
-            z-index: 10000;
-            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 100; /* Lowered slightly since it doesn't need to hover over everything anymore */
+            transition: transform 0.3s ease;
             display: block;
         }
 
         .rolls-logo-img {
-            width: 160px; /* Increased size for Desktop */
+            width: 160px; /* Keeping it big as requested */
             height: auto;
-            /* This shadow makes the logo "pop" against the food photos */
-            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.2)) drop-shadow(0 4px 15px rgba(0, 0, 0, 0.5));
+            filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
         }
 
         .franchise-logo-link:hover {
-            transform: scale(1.1); /* Slightly larger zoom on hover */
+            transform: scale(1.05);
         }
 
-        /* Tablet / Large Phone Adjustments */
-        @media (max-width: 768px) {
+        /* Mobile Adjustments */
+        @media (max-width: 480px) {
             .rolls-logo-img {
-                width: 130px;
+                width: 100px;
             }
             .franchise-logo-link {
                 top: 15px;
                 left: 15px;
-            }
-        }
-
-        /* Mobile Adjustments (Small Phones) */
-        @media (max-width: 480px) {
-            .rolls-logo-img {
-                width: 100px; /* Still clear but won't block the menu text */
-            }
-            .franchise-logo-link {
-                top: 10px;
-                left: 10px;
             }
         }
     </style>
