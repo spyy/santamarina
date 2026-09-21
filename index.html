@@ -1,394 +1,48 @@
 <!DOCTYPE html>
-<html lang="fi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ravintola Santa Marina - Menu</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>SPyy web productions</title>
     <style>
-        :root {
-            --primary-red: #d32f2f;
-            --accent-gold: #c6a664;
-            --dark-bg: #1a1a1a;
-            --card-bg: #ffffff;
-            --text-main: #333;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-        }
-
         body {
-            background-color: #f8f9fa;
-            color: var(--text-main);
-            padding-bottom: 90px;
-        }
-
-        /* Header & Logo */
-        header {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                        url('https://images.unsplash.com/photo-1574129624517-3620f4c0175b?auto=format&fit=crop&w=800&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
-            padding: 40px 20px;
-            border-bottom: 3px solid var(--accent-gold);
-        }
-
-        .logo-area {
-            /*background: white;*/
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            margin: 0 auto 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            /*border: 2px solid var(--accent-gold);*/
-        }
-
-        .logo-area i {
-            color: var(--primary-red);
-            font-size: 40px;
-        }
-
-        .brand-name {
-            font-size: 26px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 5px;
-        }
-
-        .sub-text {
-            font-weight: 500;           /* Medium-bold (Stronger than normal) */
-            font-size: 1.1rem;         /* Slightly larger */
-            letter-spacing: 0.3px;     /* Professional look */
-            margin-top: 5px;
-            display: block;            /* Ensures it sits on its own line */
-        }
-
-        /* Navigation */
-        .menu-nav {
-            display: flex;
-            background: white;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            overflow-x: auto;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            scrollbar-width: none;
-        }
-
-        .nav-item {
-            padding: 18px 25px;
-            white-space: nowrap;
-            text-decoration: none;
-            color: #666;
-            font-weight: 700;
-            font-size: 14px;
-            border-bottom: 3px solid transparent;
-        }
-
-        .nav-item.active {
-            color: var(--primary-red);
-            border-bottom: 3px solid var(--primary-red);
-        }
-
-        /* Content */
-        .container { padding: 15px; }
-
-        .section-title {
-            margin: 25px 0 15px;
-            font-size: 22px;
-            color: #1a1a1a;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 800;
-        }
-
-        .menu-item {
-            background: var(--card-bg);
-            border-radius: 12px;
-            display: flex;
-            margin-bottom: 12px;
-            overflow: hidden;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.06);
-            border: 1px solid #eee;
-        }
-
-        .item-img {
-            width: 100px;
-            height: 100px;
-            object-fit: cover;
-        }
-
-        .item-details {
-            padding: 12px;
-            flex: 1;
-        }
-
-        .item-header {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 4px;
-        }
-
-        .item-name { font-weight: 700; font-size: 16px; color: #1a1a1a; }
-        .item-price { color: var(--primary-red); font-weight: 800; }
-        .item-desc { font-size: 13px; color: #777; line-height: 1.4; }
-
-        /* Sticky Call Button */
-        .footer-action {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            background: rgba(255,255,255,0.95);
-            padding: 12px 20px;
-            box-shadow: 0 -4px 15px rgba(0,0,0,0.1);
-            backdrop-filter: blur(5px);
-            z-index: 1000;
-        }
-
-        .btn-call {
-            background: var(--primary-red);
-            color: white;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            padding: 16px;
-            border-radius: 50px;
-            font-weight: 800;
-            font-size: 16px;
-            box-shadow: 0 4px 12px rgba(211, 47, 47, 0.3);
-        }
-
-        .info-footer {
-            text-align: center;
-            padding: 30px 15px;
-            background: #eee;
-            font-size: 13px;
-            color: #888;
-        }
-
-        header {
-            /* 1. Set the background image */
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-                            url('assets/images/logo.jpg');
-            
-            /* 2. Style the background to fit properly */
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            
-            /* 3. Ensure header has enough height to show the image */
-            padding: 60px 20px;
-            min-height: 200px;
-            
-            /* 4. Ensure text is readable */
-            color: #ffffff; 
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        /* Optional: Add a shadow to the text to make it pop against the image */
-        header h1, header p {
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
             margin: 0;
-        }
-
-        /* Target the icon to change its size and color */
-        .fa-pizza-slice {
-            font-size: 24px;   /* Adjust size to match your old image */
-            color: #ff9800;    /* Choose a "pizza orange/gold" color */
-            margin-right: 10px; /* Space between icon and text */
-        }
-
-        .fab-call {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 65px;
-            height: 65px;
-            background-color: #e63946; /* Professional red color */
-            color: white;
-            border-radius: 50%;
+            height: 100vh;
             display: flex;
-            align-items: center;
+            flex-direction: column; /* Stack elements vertically */
             justify-content: center;
-            font-size: 24px;
+            align-items: center;
+            background-color: #000;
+            color: #fff;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 8vw, 5rem);
+            font-weight: 200;
+            letter-spacing: 2px;
+            margin: 0 0 20px 0; /* Space below the title */
+        }
+
+        .contact {
+            font-size: 1.1rem;
+            font-weight: 300;
+            color: #888;
             text-decoration: none;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-            z-index: 9999;
-            transition: transform 0.3s ease, background-color 0.3s ease;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
         }
 
-        /* Hover effect for desktop */
-        .fab-call:hover {
-            background-color: #d62828;
-            transform: scale(1.1) rotate(5deg);
-            color: white;
-        }
-
-        /* Pulsing effect to encourage clicks 
-        @keyframes pulse-animation {
-            0% { box-shadow: 0 0 0 0px rgba(230, 57, 70, 0.7); }
-            100% { box-shadow: 0 0 0 15px rgba(230, 57, 70, 0); }
-        }
-        */
-
-        .fab-call {
-            animation: pulse-animation 2s infinite;
-        }
-
-        /* Adjust for smaller mobile screens */
-        @media (max-width: 480px) {
-            .fab-call {
-                bottom: 20px;
-                right: 20px;
-                width: 55px;
-                height: 55px;
-                font-size: 20px;
-            }
-        }
-
-        .franchise-logo-link {
-            /* Changed from fixed to absolute to make it scroll with the page */
-            position: absolute; 
-            top: 25px;
-            left: 25px;
-            z-index: 100; /* Lowered slightly since it doesn't need to hover over everything anymore */
-            transition: transform 0.3s ease;
-            display: block;
-        }
-
-        .rolls-logo-img {
-            width: 160px; /* Keeping it big as requested */
-            height: auto;
-            filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
-        }
-
-        .franchise-logo-link:hover {
-            transform: scale(1.05);
-        }
-
-        /* Mobile Adjustments */
-        @media (max-width: 480px) {
-            .rolls-logo-img {
-                width: 100px;
-            }
-            .franchise-logo-link {
-                top: 15px;
-                left: 15px;
-            }
+        .contact:hover {
+            color: #fff; /* Brightens when hovered */
         }
     </style>
 </head>
 <body>
 
-<!-- Franchise Logo (Top Left) -->
-<a href="https://www.rolls.fi/" class="franchise-logo-link" target="_blank">
-    <img src="assets/images/Rolls-logo.png" alt="Rolls Logo" class="rolls-logo-img">
-</a>
-
-<header>
-    <div class="logo-area">
-        <a href="index.html">
-        </a>
-    </div>
-    <h1 class="brand-name">Santa Marina</h1>
-    <p class="sub-text">Pizza & Kebab Heinola</p>
-</header>
-
-<div class="menu-nav">
-    <a href="#pizzat" class="nav-item active">Pizzat</a>
-    <a href="#erikoispizzat" class="nav-item">Erikoispizzat</a>
-    <a href="#kebabit" class="nav-item">Kebabit</a>
-    <a href="#yhteystiedot" class="nav-item">Yhteystiedot</a>
-</div>
-
-<div class="container">
-    
-    <h2 id="pizzat" class="section-title">Klassikkopizzat <i class="fa fa-pizza-slice"></i></h2>
-
-    <div class="menu-item">
-        <div class="item-details">
-            <div class="item-header">
-                <span class="item-name">Bolognese</span>
-                <span class="item-price">11,50€</span>
-            </div>
-            <p class="item-desc">Jauheliha, tomaattikastike, juusto.</p>
-        </div>
-    </div>
-
-    <div class="menu-item">
-        <div class="item-details">
-            <div class="item-header">
-                <span class="item-name">Americana</span>
-                <span class="item-price">12,50€</span>
-            </div>
-            <p class="item-desc">Kinkku, ananas, aurajuusto.</p>
-        </div>
-    </div>
-
-    <h2 id="erikoispizzat" class="section-title">Erikoispizzat <i class="fa fa-pizza-slice"></i></h2>
-
-    <div class="menu-item">
-        <div class="item-details">
-            <div class="item-header">
-                <span class="item-name">Heinolan Special</span>
-                <span class="item-price">13,90€</span>
-            </div>
-            <p class="item-desc">Kebabliha, salami, pekoni, sipuli, kebab-kastike.</p>
-        </div>
-    </div>
-
-    <h2 id="kebab" class="section-title">Kebabit</h2>
-
-    <div class="menu-item">
-        <div class="item-details">
-            <div class="item-header">
-                <span class="item-name">Iskender Kebab</span>
-                <span class="item-price">12,90€</span>
-            </div>
-            <p class="item-desc">Kebabliha, paloiteltu leipä, jogurtti, salaatti.</p>
-        </div>
-    </div>
-
-</div>
-
-<div id="yhteystiedot" class="info-footer">
-    <p><strong>Ravintola Santa Marina</strong></p>
-    <p>Koulutie 2, 18300 Heinola</p>
-    <p>Ma-To 11-21 | Pe-La 11-22 | Su 12-21</p>
-</div>
-
-<div class="footer-action">
-    <!-- Floating Action Button -->
-    <a href="tel:+358413195553" class="fab-call" title="Soita ja tilaa">
-        <i class="fa-solid fa-phone"></i>
-    </a>    
-</div>
-
-<script>
-    // Aktiivisen välilehden vaihto klikatessa
-    const navItems = document.querySelectorAll('.nav-item');
-    navItems.forEach(item => {
-        item.addEventListener('click', function() {
-            navItems.forEach(i => i.classList.remove('active'));
-            this.classList.add('active');
-        });
-    });
-</script>
+    <h1>SPyy web productions</h1>
+    <a href="mailto:sami.pyy@gmail.com" class="contact">sami.pyy@gmail.com</a>
 
 </body>
 </html>
